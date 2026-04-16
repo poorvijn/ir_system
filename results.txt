@@ -1,0 +1,62 @@
+Loading dataset...
+[INFO] [starting] http://ir.dcs.gla.ac.uk/resources/test_collections/cran/cran.tar.gz
+[INFO] [finished] http://ir.dcs.gla.ac.uk/resources/test_collections/cran/cran.tar.gz: [00:00] [507kB] [647kB/s]
+Building index...
+/mnt/c/users/pro/desktop/medical_ir_system/venv/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:526: UserWarning: The parameter 'token_pattern' will not be used since 'tokenizer' is not None'
+  warnings.warn(
+
+Running queries...
+
+Query: what similarity laws must be obeyed when constructing aeroelastic models
+of heated high speed aircraft .
+Top results: ['13', '51', '184', '12', '486']
+Precision@5: 1.00
+
+Query: what are the structural and aeroelastic problems associated with flight
+of high speed aircraft .
+Top results: ['12', '51', '746', '792', '884']
+Precision@5: 0.60
+
+Query: what problems of heat conduction in composite slabs have been solved so
+far .
+Top results: ['5', '485', '181', '399', '144']
+Precision@5: 1.00
+
+Query: can a criterion be developed to show empirically the validity of flow
+solutions for chemically reacting gas mixtures based on the simplifying
+assumption of instantaneous local chemical equilibrium .
+Top results: ['166', '1275', '1189', '1312', '1085']
+Precision@5: 0.20
+
+Query: what chemical kinetic system is applicable to hypersonic aerodynamic
+problems .
+Top results: ['103', '746', '943', '1032', '1374']
+Precision@5: 0.00
+
+Query: what theoretical and experimental guides do we have as to turbulent
+couette flow behaviour .
+Top results: ['491', '386', '472', '257', '775']
+Precision@5: 0.40
+
+Query: is it possible to relate the available pressure distributions for an
+ogive forebody at zero angle of attack to the lower surface pressures of
+an equivalent ogive forebody at angle of attack .
+Top results: ['492', '434', '57', '1040', '56']
+Precision@5: 0.60
+
+Query: what methods -dash exact or approximate -dash are presently available
+for predicting body pressures at angle of attack.
+Top results: ['492', '122', '1083', '443', '461']
+Precision@5: 0.40
+
+Query: papers on internal /slip flow/ heat transfer studies .
+Top results: ['21', '326', '306', '102', '45']
+Precision@5: 0.20
+
+Query: are real-gas transport properties for air available over a wide range of
+enthalpies and densities .
+Top results: ['493', '949', '302', '524', '1199']
+Precision@5: 0.40
+
+
+Average Precision@5: 0.48
