@@ -68,7 +68,7 @@ def main():
     while True:
         user_query = input("Enter query: ").strip()
 
-        if user_query.lower() in ["exit"]:
+        if user_query.strip().lower() == "exit":
             print("Exiting...")
             break
 
