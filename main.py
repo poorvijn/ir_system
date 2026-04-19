@@ -1,13 +1,10 @@
 import ir_datasets
 from indexer import Indexer
-from retreiver import Retriever
+from retriever import Retriever
 from evaluator import precision_at_k
-import os
-os.environ["IR_DATASETS_HOME"] = "./data"
 
 def load_nfcorpus(max_docs=5000):
     dataset = ir_datasets.load("cranfield")
-
     docs = []
     for i, doc in enumerate(dataset.docs_iter()):
         if i >= max_docs:
@@ -28,7 +25,7 @@ def load_nfcorpus(max_docs=5000):
 def main():
     print("Loading dataset...")
     docs, queries, qrels = load_nfcorpus(max_docs=5000)
-
+    doc_lookup = {doc_id: text for doc_id, text in docs}
     docs = docs[:5000]
 
     print("Building index...")
@@ -62,6 +59,31 @@ def main():
         count += 1
 
     print(f"\nAverage Precision@5: {total_precision / count:.2f}")
+
+    print("\n==============================")
+    print("IR System Ready")
+    print("Type your query or 'exit' to quit")
+    print("\n")
+
+    while True:
+        user_query = input("Enter query: ").strip()
+
+        if user_query.lower() in ["exit"]:
+            print("Exiting...")
+            break
+
+        if not user_query:
+            continue
+
+        results = retriever.search(user_query, top_k=5)
+
+        print("\nTop Results:")
+        for rank, (doc_id, score) in enumerate(results, start=1):
+            snippet = doc_lookup[doc_id][:150].replace("\n", " ")
+            print(f"{rank}. DocID: {doc_id} | Score: {score:.4f}")
+            print(f"   {snippet}...")
+
+        print("\n" + "-"*40 + "\n")
 
 
 if __name__ == "__main__":
