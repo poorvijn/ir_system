@@ -3,7 +3,7 @@ from indexer import Indexer
 from retriever import Retriever
 from evaluator import precision_at_k
 
-def load_nfcorpus(max_docs=5000):
+def load_cranfield(max_docs=5000):
     dataset = ir_datasets.load("cranfield")
     docs = []
     for i, doc in enumerate(dataset.docs_iter()):
@@ -24,7 +24,7 @@ def load_nfcorpus(max_docs=5000):
 
 def main():
     print("Loading dataset...")
-    docs, queries, qrels = load_nfcorpus(max_docs=5000)
+    docs, queries, qrels = load_cranfield(max_docs=5000)
     doc_lookup = {doc_id: text for doc_id, text in docs}
     docs = docs[:5000]
 
