@@ -26,7 +26,6 @@ def main():
     print("Loading dataset...")
     docs, queries, qrels = load_cranfield(max_docs=5000)
     doc_lookup = {doc_id: text for doc_id, text in docs}
-    docs = docs[:5000]
 
     print("Building index...")
     indexer = Indexer()
